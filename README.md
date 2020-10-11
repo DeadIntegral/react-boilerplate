@@ -2,6 +2,9 @@
 
 Webpack + babel + react + react-router + emotion
 
+master branch: default  
+redux branch: master + redux(vanilla middleware)
+
 ## Building and running on localhost
 
 First install dependencies:
