@@ -56,7 +56,8 @@ const config = {
     }
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true
   },
   plugins: [
     new CopyPlugin({
