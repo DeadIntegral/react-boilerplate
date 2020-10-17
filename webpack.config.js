@@ -5,10 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+  entry: [ './src/index.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -67,7 +64,8 @@ const config = {
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
 

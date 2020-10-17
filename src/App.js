@@ -1,7 +1,6 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
-import Header from '@Components/header/Header'
-import Body from './Body'
+import Header from '@Components/header/Header';
+import Body from './Body';
 
 function App() {
   return (
@@ -13,4 +12,4 @@ function App() {
   );
 }
 
-export default hot(App);
+export default App;
