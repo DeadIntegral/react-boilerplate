@@ -5,10 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+  entry: [ './src/index.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -52,13 +49,15 @@ const config = {
     ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
+      '~': path.resolve(__dirname, 'src'),
       '@Components': path.resolve(__dirname, 'src/components/'),
       '@reducers': path.resolve(__dirname, 'src/reducers/'),
       '@actions': path.resolve(__dirname, 'src/actions/')
     }
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true
   },
   plugins: [
     new CopyPlugin({
@@ -68,7 +67,8 @@ const config = {
       analyzerMode: 'static',
       openAnalyzer: false,
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
 

@@ -1,2 +1,2 @@
-export { default as Home } from '@Components/home/Home'
-export { default as Info } from '@Components/info/Info'
+export { default as Home } from '~/components/home/Home'
+export { default as Info } from '~/components/info/Info'
