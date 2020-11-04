@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import { localStorageMiddleware } from './middleware'
-import reducer from '@reducers'
+import reducer from '~/reducers'
 
 const getMiddleware = () => {
 	return applyMiddleware(localStorageMiddleware)
