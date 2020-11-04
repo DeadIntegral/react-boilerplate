@@ -49,7 +49,7 @@ const config = {
     ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      '@Components': path.resolve(__dirname, 'src/components/')
+      '~': path.resolve(__dirname, 'src'),
     }
   },
   devServer: {
